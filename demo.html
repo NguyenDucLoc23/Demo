@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .pc, .tablet, .mobile {
+                font-size: 60px;
+                display: none;
+            }
+            /*
+            @media (max-width: 1024px) {
+                .pc, .tablet, .mobile {
+                color: red;
+                }
+            }
+            */
+            @media (min-width: 1024px) {
+                .pc {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 1024px) and (min-width: 740px) {
+                .tablet {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 740px) {
+                .mobile {
+                    display: block;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2 class="pc">PC</h2>
+        <h2 class="tablet">TABLET</h2>
+        <h2 class="mobile">MOBILE</h2>
+    </body>
+</html>

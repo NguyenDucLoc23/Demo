@@ -7,6 +7,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 /*
 1. Vị trí
@@ -14,10 +15,9 @@ html {
 3. Màu sắc
 4. Kiểu dáng (Kiểu chữ, hình dạng,..)
 */
-#main {
- 
-}
 
+
+/*Common*/
 .clear {
     clear: both;
 }
@@ -26,6 +26,75 @@ html {
     color: #fff !important;
 }
 
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-32 {
+    margin-top: 32px;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-third {
+    width: 33.33333%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+}
+
+.pull-right {
+    float: right;
+}
+
+/*Main*/
+#main {
+    /*overflow: hidden;*/
+}
 #header {
     height: 46px;
     background-color: black;
@@ -77,6 +146,7 @@ html {
 #nav > li:hover > a {
     color: #000;
     background-color: #ccc;
+    width: 100%;
 }
 
 /* :hover di chuột vào chữ thành màu đen nền trắng*/
@@ -109,12 +179,21 @@ html {
     font-size: 14px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
     
 }
 
+#header .menu-icon,
 #header .search-icon {
     color:#fff;
     font-size: 20px;
@@ -124,7 +203,15 @@ html {
 
 #header .search-btn:hover {
     cursor: pointer;
-    background-color: #f44336
+    background-color: #f44336;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
 }
 
 #slider {
@@ -158,9 +245,14 @@ html {
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 0 112px;
+    
+    padding-left: 16px;
+    padding-right: 16px;
+    
 }
 
 #content .section-heading {
@@ -187,13 +279,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
-}
-
-#content .member-item {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -243,19 +329,13 @@ html {
 }
 
 #content .places-list {
-    margin-top: 32px;
-    /*Ảnh sát mép*/
+    margin-top: 16px;
+    /*Ảnh sát mép
     margin-left: -8px;
     margin-right: -8px;
-    padding-bottom: 32px;
-} 
-
-#content .place-item {
-    float: left;
-    width: 33.33333%;
-    padding: 0 8px;
+    */
     
-}
+} 
 
 #content .place-img {
     width: 100%;
@@ -287,23 +367,6 @@ html {
     line-height: 1.4;
 } 
 
-#content .place-buy-btn {
-    background-color: #000;
-    color: white;
-    text-decoration: none;
-    padding: 10px 16px;
-    display: inline-block;
-    margin-top: 15px;
-}
-
-#content .place-buy-btn:hover {
-    background-color: #ccc;
-    color: #000;
-}
-
-#footer {
-
-}
 
 .modal {
     position: fixed;
@@ -410,4 +473,62 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.contact-content {
+    margin-top: 16px;
+}
+
+.contact-infor {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-infor i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.map-section {
+    width: 100%;
+    height: auto;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 24px;
+}
+
+#footer .social-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+#footer .social-list a:hover {
+    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .Copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .Copyright a {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
 }
